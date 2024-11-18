@@ -1,0 +1,121 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spam Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+    <style>
+      body {
+        background-color: #35abdf;
+      }
+      .domain-search {
+        margin: 0;
+        padding: 206px 0;
+      }
+      
+      .bg-pblue {
+        background-color: #35abdf;
+      }
+      
+      .domain-search .form-title {
+        margin-top: 0;
+        margin-bottom: 2px;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 100;
+      }
+      
+      .domain-search p {
+        color: #b0e7ff;
+        margin: 0;
+      }
+      
+      .domain-search .input-group {
+        -webkit-box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1);
+      }
+      
+      .domain-search .input-group-addon {
+        border: none;
+      }
+      
+      .domain-search .form-title strong {
+        display: block;
+      }
+      
+      .domain-search .form-control {
+        height: 60px;
+        border-radius: 0;
+        border: none;
+      }
+      
+      .domain-search .form-control:focus {
+        box-shadow: 0px 0px 0px 0px #ffffff !important;
+      }
+      
+      .input-group .input-group-addon [type='submit'],
+      .input-group .input-group-addon button {
+        border: none;
+        border-radius: 0;
+      }
+      
+      .domain-search .btn {
+        padding: 0 54px;
+        line-height: 60px;
+      }
+      
+      .btn-primary {
+        padding: 0 28px;
+        line-height: 54px;
+        background: #ff6726;
+        color: #fff;
+      }
+      
+      .btn-primary:hover {
+        color: #fff;
+        background-color: #286090;
+        border-color: #204d74;
+      }
+      
+      .domain-search .input-group + p {
+        color: #fff;
+        font-size: 15px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 100;
+        margin-top: 15px;
+        margin-bottom: 0;
+      }
+      
+      .domain-search .input-group + p strong {
+        margin-right: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="row domain-search bg-pblue" action="{{ url_for('predict') }}" method="POST">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h2 class="form-title">Detect & Filter <strong>Spam Text</strong></h2>
+            <p>Using Naive Bayes Classifier</p>
+          </div>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input type="text" class="form-control" name="message" value="{{message}}" />
+              <span class="input-group-addon"><input type="submit" value="Submit" class="btn btn-primary" /></span>
+            </div>
+            {% if prediction == 1 %}
+              <p>
+                <strong>Result: <h5 class="text-danger">SPAM DETECTED</h5></strong>
+              </p>
+            {% elif prediction == 0 %}
+              <p>
+                <strong>Result: <h5 style="color:darkgreen;">SPAM NOT DETECTED</h5></strong>
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
