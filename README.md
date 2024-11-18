@@ -1,4 +1,4 @@
-# Spam Classifier
+# Building a Spam Filter with Python: Using ML to Combat Spam
 
 This is a basic web application that uses a Naive Bayes Classifier to detect spam messages. It uses a pre-existing dataset of labeled messages, trains a model, and uses it to predict whether a given message is spam or not.
 
