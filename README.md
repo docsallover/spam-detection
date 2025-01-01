@@ -49,6 +49,7 @@ For more details, tutorials, tools, snippets, and resources, visit the website: 
 Follow us on:
 - [Facebook](https://www.facebook.com/docsallover)
 - [Instagram](https://www.instagram.com/docsallover.tech/)
+- [x.com](https://www.x.com/docsallover/)
 - [LinkedIn](https://www.linkedin.com/company/docsallover/)
 - [YouTube](https://www.youtube.com/@docsallover)
 - [Threads.net](https://threads.net/docsallover.tech)
